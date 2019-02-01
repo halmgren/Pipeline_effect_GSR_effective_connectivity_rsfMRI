@@ -99,6 +99,9 @@ function [Ep,Cp,Eh,F,L,dFdp,dFdpp] = spm_nlsi_GN_extra_output(M,U,Y)
 % Karl Friston
 % $Id: spm_nlsi_GN.m 6569 2015-10-14 08:53:24Z karl $
 
+%adapted by Hannes Almgren (Ghent University) for effect of GSR: line 258: L      = C.L; was added and line 1: extra output 'L' was created
+%This code is NOT part of the SPM package, it is an adapted version for specific purpose
+
 % options
 %--------------------------------------------------------------------------
 try, M.nograph; catch, M.nograph = 0;   end

@@ -19,6 +19,8 @@ function [P]   = spm_dcm_fit_extra_output(P)
 % Karl Friston
 % $Id: spm_dcm_fit.m 6716 2016-02-08 18:21:37Z peter $
 
+%adapted by Hannes Almgren (Ghent University) for effect of GSR: line 90: spm_dcm_fmri_csd was changed to spm_dcm_fmri_csd_extra_output
+%This code is NOT part of the SPM package, it is an adapted version for specific purpose
 
 % get filenames and set up
 %--------------------------------------------------------------------------

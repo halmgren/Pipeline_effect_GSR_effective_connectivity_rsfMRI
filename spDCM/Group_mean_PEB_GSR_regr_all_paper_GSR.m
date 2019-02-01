@@ -66,7 +66,7 @@ for network_number=1:length(ntwrk_name)
     M.Q     = cell2mat(N_prec_comp);
     M.X=ones(length(PEB_group),1);
     
-    [PEB DCM]=spm_dcm_peb_of_peb(PEB_group',M,[]);
+    [PEB DCM]=spm_dcm_peb_of_peb_paper_GSR(PEB_group',M,[]);
     save([Work_dir '/Results_paper_GSR/DCM/' procedure '/' name_ROI_def '/Full_model/PEB_group/PEB_all_mean_comp_GSR_regr_group_' cell2mat(N_prec_comp) '_' ntwrk_name{network_number} '.mat'],'PEB','DCM','PEB_group')
     clear PEB_group;
     

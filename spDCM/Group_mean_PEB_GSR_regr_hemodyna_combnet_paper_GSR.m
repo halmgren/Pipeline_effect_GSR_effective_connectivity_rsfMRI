@@ -97,7 +97,7 @@ for network_number=1:length(ntwrk_abbrev2)
     M.Q     = cell2mat(N_prec_comp);
     M.X=ones(length(PEB_group),1);
     
-    [PEB DCM]=spm_dcm_peb_of_peb(PEB_group',M,[]);
+    [PEB DCM]=spm_dcm_peb_of_peb_paper_GSR(PEB_group',M,[]);
     save([Work_dir '/Results_paper_GSR/DCM/' procedure '/' name_ROI_def '/Full_model/PEB_group/PEB_hemodyna_mean_comp_GSR_regr_group_' cell2mat(N_prec_comp) '_' ntwrk_abbrev2{network_number} '.mat'],'PEB','DCM','PEB_group')
     clear PEB_group;
     

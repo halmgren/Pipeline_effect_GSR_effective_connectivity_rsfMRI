@@ -46,7 +46,7 @@ for number_ROI_def=1:length(all_ROI_defs)
                 %%%%%%%%%%
                 %A-matrix
                 %%%%%%%%%%
-                Group_mean_PEB_GSR_A_matrix_paper_GSR(name_ROI_def,ntwrk_name,procedure,N_prec_comp,SPM_dir,Work_dir);
+                %Group_mean_PEB_GSR_A_matrix_paper_GSR(name_ROI_def,ntwrk_name,procedure,N_prec_comp,SPM_dir,Work_dir);
                 
                 %%%%%%%%%%%%%%
                 %hemodynamics
@@ -58,7 +58,7 @@ for number_ROI_def=1:length(all_ROI_defs)
                 %Spectral noise
                 %%%%%%%%%%%%%%%%
                 
-                Group_mean_PEB_GSR_fluct_paper_GSR(name_ROI_def,ntwrk_name,procedure,N_prec_comp,SPM_dir,Work_dir)
+                %Group_mean_PEB_GSR_fluct_paper_GSR(name_ROI_def,ntwrk_name,procedure,N_prec_comp,SPM_dir,Work_dir)
                 
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %All parameters in one PEB model
@@ -87,7 +87,7 @@ for number_ROI_def=1:length(all_ROI_defs)
                 %%%%%%%%%%%%%%%%
                 %Spectral noise
                 %%%%%%%%%%%%%%%%
-                Group_mean_PEB_GSR_regr_fluct_paper_GSR(name_ROI_def,ntwrk_name,procedure,N_prec_comp,SPM_dir,Work_dir)
+                %Group_mean_PEB_GSR_regr_fluct_paper_GSR(name_ROI_def,ntwrk_name,procedure,N_prec_comp,SPM_dir,Work_dir)
                 
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %All parameters in one PEB model
@@ -125,7 +125,7 @@ for number_ROI_def=1:length(all_ROI_defs)
                     %%%%%%%%%%
                     %A-matrix
                     %%%%%%%%%%
-                    Group_mean_PEB_GSR_A_matrix_combnet_paper_GSR(name_ROI_def,ntwrk_abbrev2,procedure,N_prec_comp,SPM_dir,Work_dir)
+                    %Group_mean_PEB_GSR_A_matrix_combnet_paper_GSR(name_ROI_def,ntwrk_abbrev2,procedure,N_prec_comp,SPM_dir,Work_dir)
                     
                     %%%%%%%%%%%%%%
                     %hemodynamics
@@ -135,7 +135,7 @@ for number_ROI_def=1:length(all_ROI_defs)
                     %%%%%%%%%%%%%%%%
                     %Spectral noise
                     %%%%%%%%%%%%%%%%
-                    Group_mean_PEB_GSR_fluct_combnet_paper_GSR(name_ROI_def,ntwrk_abbrev2,procedure,N_prec_comp,SPM_dir,Work_dir)
+                    %Group_mean_PEB_GSR_fluct_combnet_paper_GSR(name_ROI_def,ntwrk_abbrev2,procedure,N_prec_comp,SPM_dir,Work_dir)
                     
                     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                     %All parameters in one PEB model

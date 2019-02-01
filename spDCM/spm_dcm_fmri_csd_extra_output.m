@@ -38,6 +38,9 @@ function DCM = spm_dcm_fmri_csd_extra_output(P)
 % Karl Friston
 % $Id: spm_dcm_fmri_csd.m 6801 2016-05-29 19:18:06Z karl $
 
+%adapted by Hannes Almgren (Ghent University) for effect of GSR: line 203: spm_nlsi_GN was changed to spm_nlsi_GN_extra_output, and line 258: DCM.L  = L was added
+%This code is NOT part of the SPM package, it is an adapted version for specific purpose
+
 SVNid = '$Rev: 6801 $';
 
 % Load DCM structure
