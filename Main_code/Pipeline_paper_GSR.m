@@ -139,19 +139,19 @@ tic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %2.1 Datasets and subjects
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Produce_list_HCP_subjects_codes_paper_GSR(Work_dir); %Save list of (unrelated) subjects' codes used in the present study
+Produce_list_HCP_subjects_codes_paper_GSR(Work_dir); %Save list of (unrelated) subjects' codes used in the present study
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %2.2.1 Preprocessing (part 1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Move_artefact_and_pilot_scans_paper_GSR(Work_dir);
+Move_artefact_and_pilot_scans_paper_GSR(Work_dir);
 
-%Scanning_parameters_paper_GSR(Work_dir); %Create files with information regarding scan parameters (TR etc); most of them are in fact not used but calculated from data or from header
+Scanning_parameters_paper_GSR(Work_dir); %Create files with information regarding scan parameters (TR etc); most of them are in fact not used but calculated from data or from header
 
-%Move_MRI_files_paper_GSR(Work_dir); %Move functional images to separate folder
+Move_MRI_files_paper_GSR(Work_dir); %Move functional images to separate folder
 
-%Remove_first_scans_paper_GSR(Work_dir); %Discard first five scans of each session; !NOT DONE FOR HCP DATA BECAUSE ENOUGH DATAPOINTS!
+Remove_first_scans_paper_GSR(Work_dir); %Discard first five scans of each session; !NOT DONE FOR HCP DATA BECAUSE ENOUGH DATAPOINTS!
 
 tic
 
@@ -193,46 +193,46 @@ for number_dataset=[1:5]
             %2.2.1 Preprocessing (part 2)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %structural
-            %Preprocess_structural_paper_GSR(dataset,number_subject,procedure,SPM_dir,Work_dir);
+            Preprocess_structural_paper_GSR(dataset,number_subject,procedure,SPM_dir,Work_dir);
             
             %Functional
-            %Wrapper_preprocess_functional_paper_GSR(dataset,number_subject,slice_time_seconds,procedure,SPM_dir,Work_dir);
+            Wrapper_preprocess_functional_paper_GSR(dataset,number_subject,slice_time_seconds,procedure,SPM_dir,Work_dir);
             
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %2.2.2 Time-series extraction & 2.2.5 GSR
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %Extract regressors for CSV, WM, and discrete cosine set
-            %Wrapper_extract_regressors_paper_GSR(dataset,number_subject,procedure,SPM_dir,Work_dir);
+            Wrapper_extract_regressors_paper_GSR(dataset,number_subject,procedure,SPM_dir,Work_dir);
             
             %Extract timeseries for all regions
-            %Wrapper_extract_timeseries_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,procedure,SPM_dir,Work_dir);
+            Wrapper_extract_timeseries_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,procedure,SPM_dir,Work_dir);
                         
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %2.2.3 (Spectral) DCM for resting state fMRI (part 1)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %%Estimation of DCMs
-            %Wrapper_specify_estimate_DCM_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,ROI_list2,procedure,SPM_dir,Work_dir)
+            Wrapper_specify_estimate_DCM_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,ROI_list2,procedure,SPM_dir,Work_dir)
         
             %%Save diagnostics such as number of estimable parameters, explained variance, max connection strength, excessive motion, alpha level ROI extraction, etc...
-            %Diagnostics_paper_GSR(dataset,number_subject,ROI_list,ROI_list2,name_ROI_def,procedure,SPM_dir,Work_dir)
+            Diagnostics_paper_GSR(dataset,number_subject,ROI_list,ROI_list2,name_ROI_def,procedure,SPM_dir,Work_dir)
             
             %Thresholds to exclude DCMs
-            %[threshold_expl_var,threshold_max_conn,threshold_n_par_est,threshold_FD,threshold_FD_HCP,threshold_threshold_VOIs]=Define_QC_tresholds_paper_GSR(procedure);
+            [threshold_expl_var,threshold_max_conn,threshold_n_par_est,threshold_FD,threshold_FD_HCP,threshold_threshold_VOIs]=Define_QC_tresholds_paper_GSR(procedure);
             
             %Compute and save whether session reach specific threshold
-            %Above_threshold_sessions_paper_GSR(dataset,number_subject,ROI_list,ROI_list2,name_ROI_def,threshold_expl_var,threshold_max_conn,threshold_n_par_est,threshold_FD,threshold_FD_HCP,threshold_threshold_VOIs,procedure,SPM_dir,Work_dir)
+            Above_threshold_sessions_paper_GSR(dataset,number_subject,ROI_list,ROI_list2,name_ROI_def,threshold_expl_var,threshold_max_conn,threshold_n_par_est,threshold_FD,threshold_FD_HCP,threshold_threshold_VOIs,procedure,SPM_dir,Work_dir)
             
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %2.2.4 Parametric empirical Bayes (part 1)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if ~strcmp(dataset,'DatasetHCP')
-               %Wrapper_PEB_subject_mean_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,ROI_list2,procedure,all_procedure_names,SPM_dir,Work_dir) %PEB estimation over sessions
+               Wrapper_PEB_subject_mean_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,ROI_list2,procedure,all_procedure_names,SPM_dir,Work_dir) %PEB estimation over sessions
             end
             
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %2.2.6 Assessing the quality of data features
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            %First_level_complexity_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,ROI_list2,procedure,all_procedure_names,SPM_dir,Work_dir) %Sum complexity over sessions
+            First_level_complexity_paper_GSR(dataset,number_subject,name_ROI_def,ROI_list,ROI_list2,procedure,all_procedure_names,SPM_dir,Work_dir) %Sum complexity over sessions
             
         end
     end
@@ -242,30 +242,30 @@ end
 %2.2.3 (Spectral) DCM for resting state fMRI (part 2)
 %Number of excluded sessions for longi datasets (and subjects for longi datasets)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Number_included_sessions_paper_GSR(SPM_dir,Work_dir)
+Number_included_sessions_paper_GSR(SPM_dir,Work_dir)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %2.2.4 Parametric empirical Bayes (part 2)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%PEB_group_mean_paper_GSR(SPM_dir,Work_dir) %longitudinal datasets only
+PEB_group_mean_paper_GSR(SPM_dir,Work_dir) %longitudinal datasets only
 
-%PEB_group_mean_paper_GSR_DatasetHCP(SPM_dir,Work_dir)
+PEB_group_mean_paper_GSR_DatasetHCP(SPM_dir,Work_dir)
 
 %%%%%%%%%%%%%%%%%%%
 %Calculate Results
 %%%%%%%%%%%%%%%%%%%
-%Compute_effect_GSR_paper_GSR(SPM_dir,Work_dir)
+Compute_effect_GSR_paper_GSR(SPM_dir,Work_dir)
 
-%Compute_effect_GSR_HCP_paper_GSR(SPM_dir,Work_dir)
+Compute_effect_GSR_HCP_paper_GSR(SPM_dir,Work_dir)
 
-%Compute_effect_GSR_FL_complex_paper_GSR(SPM_dir,Work_dir)
+Compute_effect_GSR_FL_complex_paper_GSR(SPM_dir,Work_dir)
 
-%Compute_effect_GSR_FL_complex_HCP_paper_GSR(SPM_dir,Work_dir)
+Compute_effect_GSR_FL_complex_HCP_paper_GSR(SPM_dir,Work_dir)
 
 %%%%%%%%%%%%%%%%%
 %Produce Figures
 %%%%%%%%%%%%%%%%%
-%Figures_paper_GSR(SPM_dir,Work_dir);
+Figures_paper_GSR(SPM_dir,Work_dir);
 toc
 
 %Was number of iterations >64 for some subjects? than explicitly say this in the code

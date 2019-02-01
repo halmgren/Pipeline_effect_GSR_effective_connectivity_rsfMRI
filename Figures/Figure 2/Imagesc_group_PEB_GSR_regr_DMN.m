@@ -105,12 +105,14 @@ colormap(customCMap);
 c=colorbar;
 % 
 %%%%%%%%%%%%%%%%%%%
-A_matrix(sgn.*(ones(4,4)-diag([1 1 1 1]))==-1)=NaN;
+A_matrix_NaNs=A_matrix;
+
+A_matrix_NaNs(sgn.*(ones(4,4)-diag([1 1 1 1]))==-1)=NaN;
 
 
 for side1=1:4
     for side2=1:4
-        if ~isnan(A_matrix(side2,side1))||(side1==side2)
+        if ~isnan(A_matrix_NaNs(side2,side1))||(side1==side2)
             text(side1,side2,num2str(round(A_matrix(side2,side1),2)),'HorizontalAlignment','center','Fontweight','bold','Fontsize',40);
 %         elseif A_matrix(side2,side1)==Inf;
 %             text(side1,side2,'','HorizontalAlignment','center','Fontweight','bold','Fontsize',18);
@@ -120,8 +122,8 @@ for side1=1:4
 %             text(side1,side2,'','HorizontalAlignment','center','Fontweight','bold','Fontsize',18);
 %         elseif side2~=side1&&isnan(A_matrix(side2,side1))&&side2>8&&side1>8
 %             text(side1,side2,'','HorizontalAlignment','center','Fontweight','bold','Fontsize',18);
-        elseif isnan(A_matrix(side2,side1))
-            text(side1,side2,'  ','HorizontalAlignment','center','Fontweight','bold','Fontsize',40);
+        elseif isnan(A_matrix_NaNs(side2,side1))
+            text(side1,side2,num2str(round(A_matrix(side2,side1),2)),'HorizontalAlignment','center','Fontweight','normal','Fontsize',20);
 %         elseif side2==side1&&isnan(A_matrix(side2,side1))
 %             text(side1,side2,'','HorizontalAlignment','center','Fontweight','bold','Fontsize',18);
         end
