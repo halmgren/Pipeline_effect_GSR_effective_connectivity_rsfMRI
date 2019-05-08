@@ -1,16 +1,6 @@
-%Code paper : 'The effect of global signal regression on effective connectivity estimated with DCM
-
-%TO DO: llok at GS and FD, and see whether there is a strong correlation
-
-%check N subjects!
-
-%TD: PEB_group_mean_paper_GSR_DatasetHCP with GSR! and also Number_included_sessions and also figures_paper_GSR: everything with imagesc! 
-%also change (strcmp(procedure,'Basic')||strcmp(procedure,'GSR'))&&strcmp(all_procedure_names{2},'GSR') to (strcmp(procedure,'Basic')||strcmp(procedure,'GSR'))&&strcmp(all_procedure_names{2},'GSR')||strcmp(all_procedure_names{3},'GSR')
-
-%(!! sometimes variability is more updated, see difference for some scripts!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Code for the paper 'The effect of global signal regression on parameters estimated with DCM'
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Code for the paper 'The effect of global signal regression on DCM estimates of noise and effective connectivity from resting state fMRI'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %SOFTWARE VERSIONS
@@ -19,6 +9,7 @@
 %MATLAB: 8.6.0 (R2015b)
 %SPM: SPM12 (revision 6906)
 %DCM: DCM12 (revision 6801)
+%PEB (revision 6778)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -267,5 +258,3 @@ Compute_effect_GSR_FL_complex_HCP_paper_GSR(SPM_dir,Work_dir)
 %%%%%%%%%%%%%%%%%
 Figures_paper_GSR(SPM_dir,Work_dir);
 toc
-
-%Was number of iterations >64 for some subjects? than explicitly say this in the code
