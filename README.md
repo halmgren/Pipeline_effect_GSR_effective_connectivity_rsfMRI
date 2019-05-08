@@ -2,7 +2,7 @@ This repository contains the code that was used for the analyses of the study co
 
 The main pipeline is located in the 'Main_code'-folder. The instructions for reproduction (and data availability) are included in the 'Pipeline_paper_GSR.m'-file, and the pipeline can be applied by executing the same file.
 
-The input files are included in the five datasets ('Myconnectome', 'Midnight Scan Club', 'Day2day', 'Kirby', 'HCP') and should be converted to BIDS format (if not downloaded in this format). The code does all analyses in the paper, and creates figures and the result section. For some figures, other toolboxes should be downloaded, which are described in the 'Pipeline_paper_GSR.m'-file. Differences in software versions can have an effect on results and inference.
+The input files are included in the five datasets ('Myconnectome', 'Midnight Scan Club', 'Day2day', 'Kirby', 'HCP') and should be converted to BIDS format (if not downloaded in this format). The code does all analyses in the paper, and creates figures (results section is not yet added). For some figures, other toolboxes should be downloaded, which are described in the 'Pipeline_paper_GSR.m'-file. Differences in software versions can have an effect on results and inference.
 
 Correspondence between code and paper goes as follows:
 
