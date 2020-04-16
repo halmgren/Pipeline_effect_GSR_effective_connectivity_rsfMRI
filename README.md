@@ -1,5 +1,7 @@
 This repository contains the code that was used for the analyses of the study concerning the effect of global signal regression on spectral DCM estimates
 
+IMPORTANT: This is still the code for the preprint, the code for the published paper will be uploaded soon.
+
 The main pipeline is located in the 'Main_code'-folder. The instructions for reproduction (and data availability) are included in the 'Pipeline_paper_GSR.m'-file, and the pipeline can be applied by executing the same file.
 
 The input files are included in the five datasets ('Myconnectome', 'Midnight Scan Club', 'Day2day', 'Kirby', 'HCP') and should be converted to BIDS format (if not downloaded in this format). The code does all analyses in the paper, and creates figures (results section is not yet added). Differences in software versions can have an effect on results and inference.
