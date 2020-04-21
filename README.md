@@ -1,6 +1,6 @@
-This repository contains the code that was used for the analyses of the study concerning the effect of global signal regression on spectral DCM estimates
-
 IMPORTANT: This is still the code for the preprint, the code for the published paper will be uploaded soon.
+
+This repository contains the code that was used for the analyses of the study concerning the effect of global signal regression on spectral DCM estimates
 
 The main pipeline is located in the 'Main_code'-folder. The instructions for reproduction (and data availability) are included in the 'Pipeline_paper_GSR.m'-file, and the pipeline can be applied by executing the same file.
 
